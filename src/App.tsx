@@ -4,6 +4,7 @@ import { Contact } from './components/Contact';
 import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
 import { SkillsGrid } from './components/SkillsGrid';
+import { Testimonials } from './components/Testimonials';
 import { socialLinks } from './data/portfolio';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <SkillsGrid />
         <Timeline />
         <Projects />
+        <Testimonials />
         <Contact />
       </main>
       <footer className="border-t-2 border-dashed border-outline-variant bg-surface-container-low">

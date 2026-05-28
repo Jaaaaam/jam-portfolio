@@ -34,6 +34,12 @@ export type TimelineItem = {
   description: string;
 };
 
+export type Testimonial = {
+  name: string;
+  role: string;
+  quote: string;
+};
+
 export const profile = {
   name: 'Patricia Jamille Silvestre',
   handle: 'Jaaaaam',
@@ -42,6 +48,7 @@ export const profile = {
   intro:
     'I create practical, responsive, and polished web experiences with a soft spot for playful interfaces, clear component systems, and details that make products feel considered.',
   status: 'Open to thoughtful teams, creative builds, and product-minded engineering work.',
+  email: 'pjdeesilvestre@gmail.com',
   links: {
     github: 'https://github.com/Jaaaaam',
     linkedin: 'https://www.linkedin.com/in/patricia-jamille-silvestre-7a5963100/',
@@ -93,7 +100,7 @@ export const projects: Project[] = [
     summary:
       'A React guessing game project that turns geography recall into a fast, approachable browser experience.',
     tags: ['React', 'Game UI', 'TypeScript'],
-    href: 'https://github.com/Jaaaaam',
+    href: 'hhttps://github.com/Jaaaaam/guess-the-flag',
     accent: 'from-[#9cf0ff] to-[#e7bdb1]',
   },
 ];
@@ -119,5 +126,26 @@ export const timeline: TimelineItem[] = [
     meta: 'Interaction details',
     description:
       'Refines spacing, motion, empty states, and accessibility so the interface feels complete rather than merely assembled.',
+  },
+];
+
+export const testimonials: Testimonial[] = [
+  {
+    name: 'Erwin - LinkedIn Review',
+    role: 'Teammate',
+    quote:
+      "The most intelligent female developer I've ever worked with.",
+  },
+  {
+    name: 'Aurezza - LinkedIn Review',
+    role: 'Teammate',
+    quote:
+      "One of the smartest people I've ever worked with. Keen, witty and quick on her feet, Jam is great to work with and embodies what it is to be an adaptive and efficient person – both in and out of the office.",
+  },
+  {
+    name: 'Daryl - LinkedIn Review',
+    role: 'Teammate',
+    quote:
+      "Highly dedicated and passionate to her task; Highly skilled in front end to back end and vise versa; Always keen to every little detail; Was a great mentor who always pushes your best to the limits, ensuring you're on the right track. ",
   },
 ];
