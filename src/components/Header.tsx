@@ -29,12 +29,6 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <button
-          className="rounded-md border border-primary bg-surface-container-high p-2 text-primary shadow-pixel-sm md:hidden"
-          aria-label="Open navigation"
-        >
-          <Menu className="h-5 w-5" />
-        </button>
       </div>
     </header>
   );
@@ -46,11 +40,10 @@ export function BottomNav() {
       {navItems.map((item, index) => (
         <a
           key={item.href}
-          className={`flex flex-col items-center rounded-lg p-2 font-code text-[11px] transition active:scale-95 ${
-            index === 0
+          className={`flex flex-col items-center rounded-lg p-2 font-code text-[11px] transition active:scale-95 ${index === 0
               ? 'bg-secondary-container text-on-secondary-container'
               : 'text-on-surface-variant'
-          }`}
+            }`}
           href={item.href}
         >
           {item.label}

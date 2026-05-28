@@ -100,7 +100,7 @@ export const projects: Project[] = [
     summary:
       'A React guessing game project that turns geography recall into a fast, approachable browser experience.',
     tags: ['React', 'Game UI', 'TypeScript'],
-    href: 'hhttps://github.com/Jaaaaam/guess-the-flag',
+    href: 'https://github.com/Jaaaaam/guess-the-flag',
     accent: 'from-[#9cf0ff] to-[#e7bdb1]',
   },
 ];
