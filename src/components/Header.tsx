@@ -20,16 +20,14 @@ const themeBackgrounds = {
 export function Header() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedTheme = window.localStorage.getItem(themeStorageKey);
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    return savedTheme ? savedTheme === 'dark' : prefersDark;
+    return savedTheme === 'dark';
   });
   const [revealStyle, setRevealStyle] = useState<CSSProperties | null>(null);
   const revealTimer = useRef<number | null>(null);
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark-mode', isDarkMode);
-    window.localStorage.setItem(themeStorageKey, isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
 
   useEffect(() => () => {
@@ -47,6 +45,7 @@ export function Header() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (prefersReducedMotion) {
+      window.localStorage.setItem(themeStorageKey, nextMode ? 'dark' : 'light');
       setIsDarkMode(nextMode);
       return;
     }
@@ -103,6 +102,20 @@ export function Header() {
               )}
             </button>
           </nav>
+          <button
+            type="button"
+            aria-label="Toggle Theme"
+            aria-pressed={isDarkMode}
+            className="flex h-10 w-10 items-center justify-center rounded-sm border-2 border-primary bg-surface-container text-primary shadow-pixel-sm transition-colors hover:bg-secondary-container hover:text-on-secondary-container disabled:cursor-not-allowed disabled:opacity-70 md:hidden"
+            disabled={Boolean(revealStyle)}
+            onClick={toggleTheme}
+          >
+            {isDarkMode ? (
+              <Sun className="h-5 w-5" aria-hidden="true" />
+            ) : (
+              <Moon className="h-5 w-5" aria-hidden="true" />
+            )}
+          </button>
         </div>
       </header>
       {revealStyle ? (
