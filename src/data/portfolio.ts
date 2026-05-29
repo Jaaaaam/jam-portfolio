@@ -43,7 +43,7 @@ export type Testimonial = {
 export const profile = {
   name: 'Patricia Jamille Silvestre',
   handle: 'Jaaaaam',
-  role: 'Frontend Developer',
+  role: 'Software Engineer',
   headline: 'Building thoughtful digital experiences one line at a time.',
   intro:
     'I create practical, responsive, and polished web experiences with a soft spot for playful interfaces, clear component systems, and details that make products feel considered.',

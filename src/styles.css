@@ -5,12 +5,70 @@
 @tailwind utilities;
 
 :root {
-  color: #1e1b13;
-  background: #fff8ef;
+  --background: 255 248 239;
+  --surface: 255 248 239;
+  --surface-container-lowest: 255 255 255;
+  --surface-container-low: 251 243 228;
+  --surface-container: 245 237 222;
+  --surface-container-high: 239 231 217;
+  --surface-container-highest: 233 226 211;
+  --surface-dim: 225 217 203;
+  --primary: 68 42 34;
+  --primary-container: 93 64 55;
+  --on-primary: 255 255 255;
+  --on-primary-container: 212 173 161;
+  --secondary: 40 107 51;
+  --secondary-container: 171 244 172;
+  --on-secondary: 255 255 255;
+  --on-secondary-container: 46 114 56;
+  --tertiary: 0 55 62;
+  --tertiary-container: 0 79 89;
+  --outline: 130 116 112;
+  --outline-variant: 212 195 190;
+  --on-surface: 30 27 19;
+  --on-surface-variant: 80 68 65;
+  --amber: 255 193 7;
+  --cyan: 0 229 255;
+  --body-dot: 68 42 34;
+  --contact-terminal-accent: 171 244 172;
+  --contact-channel-text: 255 255 255;
+
+  color: rgb(var(--on-surface));
+  background: rgb(var(--background));
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.dark-mode {
+  --background: 22 18 18;
+  --surface: 22 18 18;
+  --surface-container-lowest: 17 13 13;
+  --surface-container-low: 31 27 27;
+  --surface-container: 35 31 31;
+  --surface-container-high: 45 41 41;
+  --surface-container-highest: 57 52 51;
+  --surface-dim: 22 18 18;
+  --primary: 242 190 140;
+  --primary-container: 72 41 4;
+  --on-primary: 72 41 4;
+  --on-primary-container: 255 220 189;
+  --secondary: 255 183 197;
+  --secondary-container: 94 45 54;
+  --on-secondary: 74 30 38;
+  --on-secondary-container: 255 217 224;
+  --tertiary: 212 196 196;
+  --tertiary-container: 184 169 169;
+  --outline: 156 142 130;
+  --outline-variant: 80 69 59;
+  --on-surface: 234 224 224;
+  --on-surface-variant: 212 196 183;
+  --amber: 240 189 139;
+  --cyan: 144 225 236;
+  --body-dot: 242 190 140;
+  --contact-terminal-accent: 72, 41, 4;
+  --contact-channel-text: 255 183 197;
 }
 
 html {
@@ -20,10 +78,56 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background-color: #fff8ef;
-  background-image: radial-gradient(rgba(68, 42, 34, 0.08) 1px, transparent 1px);
+  background-color: rgb(var(--background));
+  background-image: radial-gradient(rgb(var(--body-dot) / 0.1) 1px, transparent 1px);
   background-size: 24px 24px;
   font-family: Geist, system-ui, sans-serif;
+}
+
+.reveal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  clip-path: circle(0% at var(--reveal-x, 50%) var(--reveal-y, 50%));
+}
+
+@keyframes reveal {
+  from {
+    clip-path: circle(0% at var(--reveal-x, 50%) var(--reveal-y, 50%));
+  }
+
+  to {
+    clip-path: circle(150% at var(--reveal-x, 50%) var(--reveal-y, 50%));
+  }
+}
+
+.animating-theme .reveal-overlay {
+  animation: reveal 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.contact-terminal-accent {
+  color: rgb(var(--contact-terminal-accent));
+}
+
+.contact-channel-link {
+  color: rgb(var(--contact-channel-text));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animating-theme .reveal-overlay {
+    animation: none;
+    background: transparent;
+  }
+
+  body {
+    transition:
+      background-color 0.5s ease,
+      color 0.5s ease !important;
+  }
 }
 
 * {
@@ -31,8 +135,8 @@ body {
 }
 
 ::selection {
-  background: #abf4ac;
-  color: #2e7238;
+  background: rgb(var(--secondary-container));
+  color: rgb(var(--on-secondary-container));
 }
 
 button,
@@ -44,6 +148,6 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid #00e5ff;
+  outline: 3px solid rgb(var(--cyan));
   outline-offset: 3px;
 }

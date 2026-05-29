@@ -35,7 +35,7 @@ export function Contact() {
         <div className="grid grid-cols-1 gap-8 p-5 sm:p-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-6 font-code text-sm">
             <div>
-              <p className="mb-3 text-secondary-container">
+              <p className="contact-terminal-accent mb-3">
                 &gt; available_channels --list
               </p>
               <div className="flex flex-wrap gap-3">
@@ -48,7 +48,7 @@ export function Contact() {
                       href={link.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded border border-outline bg-primary-container px-3 py-2 text-on-primary transition hover:bg-secondary-container hover:text-on-secondary-container"
+                      className="contact-channel-link inline-flex items-center gap-2 rounded border border-outline bg-primary-container px-3 py-2 transition hover:bg-secondary-container hover:text-on-secondary-container"
                     >
                       <Icon className="h-4 w-4" aria-hidden="true" />
                       {link.label}
@@ -58,7 +58,7 @@ export function Contact() {
               </div>
             </div>
             <div>
-              <p className="mb-2 text-secondary-container">
+              <p className="contact-terminal-accent mb-2">
                 &gt; status --message
               </p>
               <p className="leading-7 text-on-primary/90">{profile.status}</p>
@@ -66,18 +66,18 @@ export function Contact() {
           </div>
           <div className="space-y-5 font-code text-sm">
             <div className="space-y-2">
-              <p className="text-secondary-container">&gt; set_destination</p>
+              <p className="contact-channel-text">&gt; set_destination</p>
               <p className="break-all text-on-primary">
                 Current: {profile.email}
               </p>
             </div>
             <div className="rounded-lg border border-outline bg-primary-container p-4">
-              <p className="mb-3 text-secondary-container">
+              <p className="contact-channel-text mb-3">
                 &gt; contact_email --primary
               </p>
               <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <a
-                  className="inline-flex min-w-0 items-center gap-3 break-all text-on-primary transition hover:text-secondary-container"
+                  className="inline-flex min-w-0 items-center gap-3 break-all transition hover:text-secondary-container"
                   href={`mailto:${profile.email}`}
                 >
                   <Mail className="h-5 w-5 shrink-0" aria-hidden="true" />
