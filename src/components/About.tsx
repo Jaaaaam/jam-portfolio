@@ -11,26 +11,26 @@ export function About() {
         <WindowPanel title="Career_Journey.exe">
           <div className="space-y-5">
             <p className="leading-8 text-on-surface-variant">
-              I like building interfaces that are useful first and delightful
-              right after. My work leans toward clean React patterns,
-              maintainable styling, and small interaction details that help
-              people move through a product confidently.
+              I build interfaces that are useful first and delightful right
+              after. My strongest lane is React and reusable frontend systems,
+              with production work across Lit, PWA and mobile web behavior, and
+              side projects where I explore TypeScript, Codex, Claude, and Convex.
             </p>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div className="rounded-md border border-outline-variant bg-surface-container-high p-4">
                 <span className="mb-2 block font-pixel text-[10px] leading-4 text-secondary">
-                  MODE: BUILD
+                  MODE: SHIP
                 </span>
                 <p className="text-sm text-on-surface-variant">
-                  Converting concepts into working, responsive experiences.
+                  Building production frontend systems for real product workflows.
                 </p>
               </div>
               <div className="rounded-md border border-outline-variant bg-surface-container-high p-4">
                 <span className="mb-2 block font-pixel text-[10px] leading-4 text-secondary">
-                  FOCUS: UX
+                  FOCUS: FRONTEND
                 </span>
                 <p className="text-sm text-on-surface-variant">
-                  Keeping layouts clear, accessible, and friendly to maintain.
+                  Keeping components reusable, accessible, responsive, and easy to maintain.
                 </p>
               </div>
             </div>
@@ -61,7 +61,7 @@ export function Timeline() {
   return (
     <section className="space-y-8">
       <SectionHeading eyebrow="Progression" title="LVL_PROGRESSION" />
-      <div className="relative grid grid-cols-1 gap-5 md:grid-cols-3">
+      <div className="relative grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
         {timeline.map((item, index) => (
           <article
             key={item.level}

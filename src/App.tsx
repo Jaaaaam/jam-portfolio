@@ -22,7 +22,7 @@ function App() {
       </main>
       <footer className="border-t-2 border-dashed border-outline-variant bg-surface-container-low">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-8 text-center font-code text-sm text-on-surface-variant sm:px-6 md:flex-row lg:px-10">
-          <p>Built with React, TypeScript, Tailwind, coffee, and code.</p>
+          <p>Built with React, TypeScript, Tailwind, and frontend systems thinking.</p>
           <div className="flex gap-5">
             {socialLinks.map((link) => (
               <a

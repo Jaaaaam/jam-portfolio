@@ -1,6 +1,10 @@
 import {
-  BriefcaseBusiness,
+  Bot,
+  Braces,
   Code2,
+  Database,
+  FileCode2,
+  GitBranch,
   Github,
   Globe2,
   Layers3,
@@ -8,14 +12,26 @@ import {
   MonitorSmartphone,
   Palette,
   PenTool,
+  Rocket,
+  Server,
+  Smartphone,
   Terminal,
+  Workflow,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
 export type Skill = {
   label: string;
-  code: string;
   icon: LucideIcon;
+};
+
+export type SkillCategory = {
+  title: string;
+  eyebrow: string;
+  description: string;
+  icon: LucideIcon;
+  skills: Skill[];
+  featured?: boolean;
 };
 
 export type Project = {
@@ -43,11 +59,12 @@ export type Testimonial = {
 export const profile = {
   name: 'Patricia Jamille Silvestre',
   handle: 'Jaaaaam',
-  role: 'Software Engineer',
-  headline: 'Building thoughtful digital experiences one line at a time.',
+  role: 'Web Engineer at ING',
+  headline: 'Building maintainable frontend systems for modern web products.',
   intro:
-    'I create practical, responsive, and polished web experiences with a soft spot for playful interfaces, clear component systems, and details that make products feel considered.',
-  status: 'Open to thoughtful teams, creative builds, and product-minded engineering work.',
+    'I am a frontend-focused web engineer with 10+ years of experience building production web apps, reusable UI components, and responsive interfaces, with React as my main expertise.',
+  status:
+    'Currently building modern web interfaces at ING with Lit and Azure. Outside work, I explore TypeScript, Codex, Claude, and Convex through side projects.',
   email: 'pjdeesilvestre@gmail.com',
   links: {
     github: 'https://github.com/Jaaaaam',
@@ -64,15 +81,89 @@ export const socialLinks = [
   { label: 'CodePen', href: profile.links.codepen, icon: PenTool },
 ];
 
-export const skills: Skill[] = [
-  { label: 'React', code: 'REACT_UI', icon: Code2 },
-  { label: 'TypeScript', code: 'TYPE_SYS', icon: Layers3 },
-  { label: 'Responsive UI', code: 'RWD_APP', icon: MonitorSmartphone },
-  { label: 'Tailwind CSS', code: 'TW_CSS', icon: Palette },
-  { label: 'JavaScript', code: 'JS_CORE', icon: Terminal },
-  { label: 'Product Thinking', code: 'PROD_UX', icon: BriefcaseBusiness },
-  { label: 'Web Apps', code: 'WEB_APP', icon: Globe2 },
-  { label: 'Creative Coding', code: 'CODEPEN', icon: PenTool },
+export const skillCategories: SkillCategory[] = [
+  {
+    title: 'Primary Frontend',
+    eyebrow: 'current focus',
+    description:
+      'React is my main expertise, supported by years of production UI work across modern web stacks.',
+    icon: Code2,
+    featured: true,
+    skills: [
+      { label: 'React', icon: Code2 },
+      { label: 'JavaScript', icon: Terminal },
+      { label: 'TypeScript', icon: Layers3 },
+      { label: 'Next.js', icon: Globe2 },
+      { label: 'Vue', icon: FileCode2 },
+      { label: 'Lit', icon: Braces },
+      { label: 'PWA', icon: Smartphone },
+      { label: 'HTML5', icon: FileCode2 },
+      { label: 'CSS3', icon: Palette },
+    ],
+  },
+  {
+    title: 'Styling & UI',
+    eyebrow: 'interface craft',
+    description: 'Responsive, polished UI work across product and client-facing interfaces.',
+    icon: Palette,
+    skills: [
+      { label: 'Tailwind CSS', icon: Palette },
+      { label: 'SASS / SCSS', icon: Braces },
+      { label: 'Bootstrap', icon: Layers3 },
+      { label: 'Responsive UI', icon: MonitorSmartphone },
+      { label: 'Mobile Web', icon: Smartphone },
+    ],
+  },
+  {
+    title: 'Backend & APIs',
+    eyebrow: 'supporting stack',
+    description: 'Enough backend depth to build, connect, and ship full product workflows.',
+    icon: Server,
+    skills: [
+      { label: 'PHP', icon: FileCode2 },
+      { label: 'Laravel', icon: Server },
+      { label: 'Node.js', icon: Terminal },
+      { label: 'Convex', icon: Database },
+      { label: 'REST APIs', icon: Workflow },
+    ],
+  },
+  {
+    title: 'Databases',
+    eyebrow: 'data layer',
+    description: 'Relational and document data experience from full-stack roles.',
+    icon: Database,
+    skills: [
+      { label: 'MySQL', icon: Database },
+      { label: 'MongoDB', icon: Database },
+    ],
+  },
+  {
+    title: 'Workflow & Tools',
+    eyebrow: 'delivery',
+    description: 'Daily collaboration and engineering workflow tools.',
+    icon: GitBranch,
+    skills: [
+      { label: 'Git / GitHub', icon: GitBranch },
+      { label: 'Jira', icon: Workflow },
+      { label: 'Asana', icon: Workflow },
+      { label: 'GitHub Copilot', icon: Bot },
+      { label: 'Codex', icon: Terminal },
+      { label: 'Claude', icon: Bot },
+      { label: 'Agile', icon: Workflow },
+    ],
+  },
+  {
+    title: 'Platforms & Deployment',
+    eyebrow: 'release paths',
+    description: 'Web platform deployment experience, including installable and mobile web contexts.',
+    icon: Rocket,
+    skills: [
+      { label: 'WordPress', icon: Globe2 },
+      { label: 'Azure', icon: Server },
+      { label: 'PWA Deployment', icon: Rocket },
+      { label: 'iOS Web App Deployment', icon: Smartphone },
+    ],
+  },
 ];
 
 export const projects: Project[] = [
@@ -80,7 +171,7 @@ export const projects: Project[] = [
     title: "Who's the Spy",
     serial: 'JAM-001',
     summary:
-      'A multiplayer social deduction game built with React, TypeScript, Convex, and focused real-time room flows.',
+      'A multiplayer social deduction game shaped around real-time room flow, clear interaction states, and a TypeScript-first React interface.',
     tags: ['React', 'TypeScript', 'Convex'],
     href: 'https://github.com/Jaaaaam/whos-the-spy',
     accent: 'from-[#abf4ac] to-[#00e5ff]',
@@ -89,7 +180,7 @@ export const projects: Project[] = [
     title: 'Maglalaba Ba',
     serial: 'JAM-002',
     summary:
-      'A lightweight weather-aware laundry helper with a playful Filipino concept and mobile-friendly interface.',
+      'A responsive weather-aware laundry helper that turns a playful Filipino concept into a clean, mobile-friendly web experience.',
     tags: ['React', 'Vite', 'Tailwind'],
     href: 'https://github.com/Jaaaaam/maglalaba-ba',
     accent: 'from-[#ffdbd0] to-[#ffc107]',
@@ -98,7 +189,7 @@ export const projects: Project[] = [
     title: 'Guess the Country',
     serial: 'JAM-003',
     summary:
-      'A React guessing game project that turns geography recall into a fast, approachable browser experience.',
+      'A polished React guessing game focused on fast feedback, approachable gameplay, and a simple interface that works well across screen sizes.',
     tags: ['React', 'Game UI', 'TypeScript'],
     href: 'https://github.com/Jaaaaam/guess-the-flag',
     accent: 'from-[#9cf0ff] to-[#e7bdb1]',
@@ -108,24 +199,31 @@ export const projects: Project[] = [
 export const timeline: TimelineItem[] = [
   {
     level: '01',
-    title: 'Creative Builder',
-    meta: 'Design to browser',
+    title: 'Web Foundations',
+    meta: 'WordPress, PHP, Laravel',
     description:
-      'Turns ideas and mockups into structured, responsive interfaces that feel intentional on every viewport.',
+      'Built and maintained client websites, WordPress experiences, and PHP/Laravel-backed web interfaces.',
   },
   {
     level: '02',
-    title: 'Frontend Systems',
-    meta: 'Components and state',
+    title: 'Full Stack Growth',
+    meta: 'React, Vue, APIs, databases',
     description:
-      'Builds reusable components, data-driven sections, and UI patterns that stay easy to maintain.',
+      'Expanded across frontend and backend work with React, Vue, Laravel, .NET, APIs, MySQL, and MongoDB.',
   },
   {
     level: '03',
-    title: 'Product Polish',
-    meta: 'Interaction details',
+    title: 'Frontend Systems',
+    meta: 'PWA, iOS web',
     description:
-      'Refines spacing, motion, empty states, and accessibility so the interface feels complete rather than merely assembled.',
+      'Led frontend delivery, reusable component work, PWA development, and iOS web app deployment experience.',
+  },
+  {
+    level: '04',
+    title: 'Web Engineer at ING',
+    meta: 'Lit, Azure, modern UI',
+    description:
+      'Now building modern web interfaces with Lit and Azure, while keeping frontend patterns maintainable.',
   },
 ];
 

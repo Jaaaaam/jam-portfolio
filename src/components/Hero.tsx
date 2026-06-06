@@ -21,18 +21,18 @@ export function Hero() {
     >
       <div className="order-2 space-y-6 lg:order-1 lg:col-span-7">
         <div className="inline-flex rounded-full border border-primary bg-secondary-container px-4 py-2 font-code text-xs font-bold uppercase text-on-secondary-container shadow-pixel-sm">
-          Ready to connect_
+          Currently shipping at ING_
         </div>
         <div className="space-y-5">
           <p className="font-code text-sm text-on-surface-variant">
             Hello, I&apos;m {profile.name}.
           </p>
           <h1 className="max-w-4xl font-headline text-4xl font-bold leading-tight text-primary sm:text-5xl lg:text-6xl">
-            Building thoughtful{' '}
+            Building maintainable{' '}
             <span className="text-secondary underline decoration-dashed underline-offset-8">
-              digital experiences
+              frontend systems
             </span>{' '}
-            one line at a time.
+            for modern web products.
           </h1>
           <p className="max-w-2xl text-lg leading-8 text-on-surface-variant">
             {profile.intro}
