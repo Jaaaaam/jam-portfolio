@@ -147,9 +147,21 @@ export const skillCategories: SkillCategory[] = [
       { label: 'Jira', icon: Workflow },
       { label: 'Asana', icon: Workflow },
       { label: 'GitHub Copilot', icon: Bot },
+      { label: 'Agile', icon: Workflow },
+    ],
+  },
+  {
+    title: 'Side Project Lab',
+    eyebrow: 'hobby builds',
+    description: 'Personal projects where I explore AI-assisted workflows and newer app patterns.',
+    icon: Bot,
+    skills: [
       { label: 'Codex', icon: Terminal },
       { label: 'Claude', icon: Bot },
-      { label: 'Agile', icon: Workflow },
+      { label: 'TypeScript', icon: Layers3 },
+      { label: 'Convex', icon: Database },
+      { label: 'React', icon: Code2 },
+      { label: 'Vite', icon: Rocket },
     ],
   },
   {
@@ -160,6 +172,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { label: 'WordPress', icon: Globe2 },
       { label: 'Azure', icon: Server },
+      { label: 'AWS', icon: Server },
       { label: 'PWA Deployment', icon: Rocket },
       { label: 'iOS Web App Deployment', icon: Smartphone },
     ],

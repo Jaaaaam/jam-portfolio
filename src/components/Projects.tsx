@@ -13,8 +13,8 @@ export function Projects() {
             className="group flex h-full flex-col rounded-lg border-2 border-primary bg-surface-container-lowest p-4 shadow-pixel transition hover:-translate-y-1"
           >
             <div className="mb-4 overflow-hidden rounded border-2 border-primary bg-surface-dim shadow-pixel-sm">
-              <div className={`aspect-video bg-gradient-to-br ${project.accent} p-4`}>
-                <div className="flex h-full flex-col justify-between rounded border border-primary/25 bg-primary/70 p-4 text-on-primary">
+              <div className={`project-preview-gradient aspect-video bg-gradient-to-br ${project.accent} p-4`}>
+                <div className="project-preview-terminal flex h-full flex-col justify-between rounded border border-primary/25 bg-primary/70 p-4 text-on-primary">
                   <div className="flex items-center justify-between font-pixel text-[8px] leading-4">
                     <span>SERIAL: {project.serial}</span>
                     <span>REV A</span>

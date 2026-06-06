@@ -39,8 +39,8 @@ export function Hero() {
           </p>
         </div>
         <div className="rounded-lg border-2 border-primary bg-primary p-5 font-code text-sm text-on-primary-container shadow-pixel sm:p-6">
-          <p className="mb-2">
-            &gt;<span className="text-secondary-container"> status</span>{' '}
+          <p className="terminal-command-text mb-2">
+            &gt;<span className="terminal-command-accent text-secondary-container"> status</span>{' '}
             --current
           </p>
           <p className="mb-4 text-on-primary">{profile.role}</p>

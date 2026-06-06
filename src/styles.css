@@ -117,6 +117,56 @@ body {
   color: rgb(var(--contact-channel-text));
 }
 
+.dark-mode .terminal-command-text {
+  color: rgb(var(--on-primary));
+  font-weight: 700;
+}
+
+.dark-mode .terminal-command-accent {
+  color: rgb(var(--on-primary));
+}
+
+.dark-mode .project-preview-gradient {
+  background-color: rgb(var(--surface-container-highest));
+}
+
+.dark-mode #work article:nth-child(1) .project-preview-gradient {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(22 78 99 / 0.4),
+    rgb(19 78 74 / 0.2),
+    rgb(var(--surface-container-highest))
+  );
+}
+
+.dark-mode #work article:nth-child(2) .project-preview-gradient {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(124 45 18 / 0.4),
+    rgb(120 53 15 / 0.2),
+    rgb(var(--surface-container-highest))
+  );
+}
+
+.dark-mode #work article:nth-child(3) .project-preview-gradient {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(88 28 135 / 0.4),
+    rgb(112 26 117 / 0.2),
+    rgb(var(--surface-container-highest))
+  );
+}
+
+.dark-mode .project-preview-terminal {
+  border-color: rgb(var(--outline-variant));
+  background-color: rgb(var(--surface-container-lowest));
+  color: rgb(var(--primary));
+}
+
+.dark-mode .project-preview-terminal .text-secondary-container {
+  color: rgb(var(--secondary));
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animating-theme .reveal-overlay {
     animation: none;
